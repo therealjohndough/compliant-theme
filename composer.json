@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
+      "App\\": "./"
     }
   },
   "autoload-dev": {
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "phpunit",
-    "lint": "phpcs --standard=PSR12 src/"
+    "lint": "phpcs --standard=PSR12 ."
   },
   "minimum-stability": "dev",
   "prefer-stable": true
