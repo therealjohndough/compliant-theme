@@ -1,0 +1,24 @@
+/*
+Theme Name: Compliant Theme
+Theme URI: https://github.com/therealjohndough/compliant-theme
+Author: John D’Angelo
+Author URI: https://casestudy-labs.com/
+Description: A custom theme built for performance, compliance, and creative control.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: compliant-theme
+*/
+
+/*
+ * This file is primarily for theme registration.
+ *
+ * The visual styling for this theme is loaded dynamically via functions.php
+ * from the CSS files located in the /styles/ directory. This allows for
+ * selectable "skins" from the WordPress Customizer.
+ *
+ * You can add global, foundational CSS here if needed, but it's
+ * generally recommended to keep skin-specific styles in their own files.
+ */
