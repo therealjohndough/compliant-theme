@@ -1,4 +1,3 @@
-// Replace the entire contents of page-products.php with this:
 <?php
 /**
  * Template Name: Products Page
