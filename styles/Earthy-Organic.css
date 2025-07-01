@@ -1,0 +1,118 @@
+/* Skin Name: Earthy Organic */
+:root {
+    --bg-color: #FBF9F4; /* Off-white, parchment color */
+    --primary-text: #3C3633; /* Dark, warm brown */
+    --secondary-text: #7A726E;
+    --glow-color: #3A5A40; /* A deep, forest green */
+    --card-bg: #F4F1EA;
+    --border-color: #E3DCD2;
+    --footer-bg: #F4F1EA;
+}
+
+/* --- 10. Blog & Post Styles --- */
+
+/* Specific font for the Earthy Organic skin */
+.skin-earthy-organic {
+    font-family: 'Lora', serif;
+}
+.skin-earthy-organic h1, .skin-earthy-organic h2, .skin-earthy-organic h3 {
+    font-family: 'Inter', sans-serif; /* Use Inter for headers for contrast */
+}
+
+.content-area {
+    padding: 80px 0;
+}
+.content-area .container {
+    max-width: 800px; /* Optimal width for reading text */
+}
+
+.post-listing .post-excerpt {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+.post-listing .post-excerpt:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.entry-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+.entry-title a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.entry-title a:hover {
+    color: var(--glow-color);
+}
+
+.entry-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+.entry-meta span {
+    margin-right: 15px;
+}
+.single .entry-meta {
+    margin: 15px 0 0 0;
+}
+
+.entry-summary,
+.entry-content {
+    line-height: 1.8;
+}
+
+.entry-content h2,
+.entry-content h3 {
+    margin-top: 2em;
+}
+
+.read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--glow-color);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.read-more-link:hover {
+    opacity: 0.8;
+}
+
+.the-posts-pagination {
+    margin-top: 60px;
+    display: flex;
+    gap: 10px;
+}
+.the-posts-pagination .page-numbers {
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--secondary-text);
+    transition: all 0.3s ease;
+}
+.the-posts-pagination .page-numbers.current,
+.the-posts-pagination .page-numbers:hover {
+    background-color: var(--glow-color);
+    border-color: var(--glow-color);
+    color: var(--bg-color);
+}
+/* For dark themes, this makes the numbers visible */
+.skin-futuristic-glow .the-posts-pagination .page-numbers.current,
+.skin-futuristic-glow .the-posts-pagination .page-numbers:hover {
+    color: var(--bg-color);
+}
+/* For light themes, this makes the numbers visible */
+.skin-corporate-clean .the-posts-pagination .page-numbers.current,
+.skin-corporate-clean .the-posts-pagination .page-numbers:hover,
+.skin-earthy-organic .the-posts-pagination .page-numbers.current,
+.skin-earthy-organic .the-posts-pagination .page-numbers:hover {
+    color: #fff;
+}
