@@ -1,0 +1,528 @@
+/*
+ * Skin Name: Futuristic Glow (Dark)
+ * Version: 1.1
+ * Description: A clean, organized, and complete stylesheet for the NY Cannabis Theme.
+ */
+
+/* --- 1. Global Settings & Variables --- */
+:root {
+    --bg-color: #0d0d1a;
+    --primary-text: #e0e0e0;
+    --secondary-text: #a0a0b0;
+    --glow-color: #00f2ea;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --footer-bg: #070710;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Header & Navigation --- */
+.site-header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: rgba(13, 13, 26, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-branding img {
+    max-height: 40px;
+    width: auto;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-navigation a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--glow-color);
+    transition: width 0.3s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a {
+    color: #fff;
+}
+
+.main-navigation a:hover:after,
+.main-navigation .current-menu-item > a:after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.icon-close { display: none; }
+.main-navigation.is-active .icon-menu { display: none; }
+.main-navigation.is-active .icon-close { display: block; }
+
+/* --- 3. Page & Section Structure --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.page-header {
+    text-align: center;
+    padding: 80px 0;
+    background: radial-gradient(ellipse at center, rgba(0, 242, 234, 0.05), transparent 70%);
+}
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+/* --- 4. Hero Section --- */
+.hero-section {
+    padding: 120px 0;
+    text-align: center;
+    background: radial-gradient(ellipse at bottom, rgba(0, 242, 234, 0.05), transparent 60%);
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2.5px;
+    text-shadow: 0 0 20px rgba(0, 242, 234, 0.3);
+}
+
+.hero-section .tagline {
+    font-size: 1.25rem;
+    color: var(--secondary-text);
+    max-width: 600px;
+    margin: 15px auto 40px auto;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--glow-color);
+    color: var(--bg-color);
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 242, 234, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 242, 234, 0.6);
+}
+
+/* --- 5. Product Grid & Cards --- */
+.products-section {
+    padding: 100px 0;
+}
+
+.products-section.page-version {
+    padding-top: 0; /* No top padding when used on the products page */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.products-section.page-version .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Find and replace the .product-card svg rule with this new block */
+
+.product-card-image {
+    width: 100%;
+    height: 200px; /* Give a consistent height to all images */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-card-image img {
+    transform: scale(1.05);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--glow-color);
+    box-shadow: 0 0 40px rgba(0, 242, 234, 0.2);
+}
+
+.product-card svg {
+    width: 48px;
+    height: 48px;
+    color: var(--glow-color);
+    stroke-width: 1.5;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.product-card p {
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+/* --- 6. Our Process Section --- */
+.process-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.process-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--glow-color);
+    stroke-width: 1.5;
+}
+
+.process-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.process-content p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+/* --- 7. Footer --- */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--secondary-text);
+    padding: 60px 0;
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--secondary-text);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--glow-color);
+    transform: translateY(-3px);
+}
+
+.compliance-info {
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.compliance-info p,
+.copyright-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 8. Animation & Responsive --- */
+[data-sal] {
+  transition: all 0.6s ease-out;
+}
+[data-sal="fade-in"] {
+  opacity: 0;
+}
+[data-sal="fade-in"].sal-animate {
+  opacity: 1;
+}
+[data-sal="slide-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+}
+[data-sal="slide-up"].sal-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    /* Responsive Header */
+    .menu-toggle {
+        display: block;
+    }
+    .main-navigation ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+    }
+    .main-navigation.is-active ul {
+        display: flex;
+    }
+    .main-navigation li {
+        padding: 10px 0;
+    }
+
+    /* Responsive Typography */
+    .hero-section h1 {
+        font-size: 3rem;
+        letter-spacing: -1.5px;
+    }
+    .hero-section .tagline {
+        font-size: 1.1rem;
+    }
+    .section-header h2,
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- 9. JavaScript-Driven Animation Styles --- */
+
+/* Style for the body when the mobile menu is active */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Styles for the scrolled header */
+.site-header.is-scrolled {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(13, 13, 26, 0.95);
+}
+
+/* Styles for the cursor glow effect */
+.cursor-glow {
+    position: fixed;
+    top: -150px; /* Position off-screen initially */
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--glow-color) 0%, rgba(0, 242, 234, 0) 60%);
+    border-radius: 50%;
+    pointer-events: none; /* Allows clicks to go through it */
+    z-index: 9999;
+    opacity: 0.2;
+    transition: transform 0.1s ease-out; /* Creates a slight lag for smoothness */
+}
+
+/* Styles for the 3D card tilt effect */
+.product-card {
+    /* This will preserve the 3D transformations for child elements */
+    transform-style: preserve-3d;
+    /* Sets the default transition for the mouseleave event */
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- 10. Blog & Post Styles --- */
+
+/* Specific font for the Earthy Organic skin */
+.skin-earthy-organic {
+    font-family: 'Lora', serif;
+}
+.skin-earthy-organic h1, .skin-earthy-organic h2, .skin-earthy-organic h3 {
+    font-family: 'Inter', sans-serif; /* Use Inter for headers for contrast */
+}
+
+.content-area {
+    padding: 80px 0;
+}
+.content-area .container {
+    max-width: 800px; /* Optimal width for reading text */
+}
+
+.post-listing .post-excerpt {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+.post-listing .post-excerpt:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.entry-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+.entry-title a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.entry-title a:hover {
+    color: var(--glow-color);
+}
+
+.entry-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+.entry-meta span {
+    margin-right: 15px;
+}
+.single .entry-meta {
+    margin: 15px 0 0 0;
+}
+
+.entry-summary,
+.entry-content {
+    line-height: 1.8;
+}
+
+.entry-content h2,
+.entry-content h3 {
+    margin-top: 2em;
+}
+
+.read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--glow-color);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.read-more-link:hover {
+    opacity: 0.8;
+}
+
+.the-posts-pagination {
+    margin-top: 60px;
+    display: flex;
+    gap: 10px;
+}
+.the-posts-pagination .page-numbers {
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--secondary-text);
+    transition: all 0.3s ease;
+}
+.the-posts-pagination .page-numbers.current,
+.the-posts-pagination .page-numbers:hover {
+    background-color: var(--glow-color);
+    border-color: var(--glow-color);
+    color: var(--bg-color);
+}
+/* For dark themes, this makes the numbers visible */
+.skin-futuristic-glow .the-posts-pagination .page-numbers.current,
+.skin-futuristic-glow .the-posts-pagination .page-numbers:hover {
+    color: var(--bg-color);
+}
+/* For light themes, this makes the numbers visible */
+.skin-corporate-clean .the-posts-pagination .page-numbers.current,
+.skin-corporate-clean .the-posts-pagination .page-numbers:hover,
+.skin-earthy-organic .the-posts-pagination .page-numbers.current,
+.skin-earthy-organic .the-posts-pagination .page-numbers:hover {
+    color: #fff;
+}
