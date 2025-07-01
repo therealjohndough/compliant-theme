@@ -23,3 +23,34 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+# System
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Composer
+/vendor/
+composer.lock
+.phpunit.result.cache
+
+# Node (if you're using it)
+node_modules/
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+*.cache
+*.tmp
+
+# WordPress specific
+wp-content/uploads/
+wp-content/cache/
